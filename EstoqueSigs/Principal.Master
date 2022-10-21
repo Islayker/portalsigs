@@ -1,0 +1,113 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Principal.master.cs" Inherits="EstoqueSigs.Principal" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Estoque SIGS Brasil</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="container">
+            <span class="glyphicon glyphicon-user">&emsp;<asp:Label ID="lblSession" runat="server"></asp:Label>&emsp;</span><span class="glyphicon glyphicon-lock"></span>
+                </div>
+        </div>
+    </div>
+<div class="row">
+    <div class="col-md-12">
+<div class="container">
+ <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="../Index.aspx">Home</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Cadastrar
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="../Pages/AddProdutos.aspx">Produtos</a></li>
+            <li><a href="../Pages/AddMarcas.aspx">Marcas</a></li>
+            <li><a href="../Pages/AddTeam.aspx">Recebedor</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Entrada de Materiais
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="../Pages/AddEstoqueMG.aspx">Entrada Estoque MG</a></li>
+            <li><a href="../Pages/AddEstoqueES.aspx">Entrada Estoque ES</a></li>
+            <li><a href="../Pages/AddEstoqueMA.aspx">Entrada Estoque MA</a></li>
+            <li><a href="../Pages/AddEstoquePA.aspx">Entrada Estoque PA</a></li>
+            <li><a href="../Pages/AddEstoqueRJ.aspx">Entrada Estoque RJ</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Saída de Materiais
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="../Pages/OutEstoqueMG.aspx">Saída Estoque MG</a></li>
+            <li><a href="../Pages/OutEstoqueES.aspx">Saída Estoque ES</a></li>
+            <li><a href="../Pages/OutEstoqueMA.aspx">Saída Estoque MA</a></li>
+            <li><a href="../Pages/OutEstoquePA.aspx">Saída Estoque PA</a></li>
+            <li><a href="../Pages/OutEstoqueRJ.aspx">Saída Estoque RJ</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Estoque Disponível
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="../Pages/EstoqueGeral.aspx">Entrada Estoque Geral</a></li>
+            <li><a href="../Pages/TransferID.aspx">Transferir Equipamentos p/ Projetos</a></li>
+            <li><a href="../Pages/TransferManut.aspx">Transferir Equipamentos p/ Manutenção</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Relatórios
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="../Pages/ReportProdutos.aspx">Produtos</a></li>
+            <li><a href="#">Marcas</a></li>
+            <li><a href="../Pages/ReportID.aspx">Estoque de Projetos</a></li>
+            <li><a href="../Pages/ReportEstoqueGeral.aspx">Estoque Geral - Inventário</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Administrativo</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><li><a href="../Logout.aspx"><span class="glyphicon glyphicon-log-out"></span></a></li></li>
+    </ul>
+  </div>
+</nav> 
+</div>
+    </div>
+    </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    <link href="../Content/bootstrap.css" rel="stylesheet" media="screen" />
+    <script type="text/javascript" src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="../Scripts/validator.js"></script>
+    <script type="text/javascript" src="../Scripts/mascara.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function () {
+
+            window.setTimeout(function () {
+                $(".alert").fadeTo(500, 0).slideUp(500, function () {
+                    $(this).remove();
+                });
+            }, 2000);
+
+            });
+        function printing()
+        {
+            window.print();
+            
+
+        }
+</script>
+</body>
+</html>
